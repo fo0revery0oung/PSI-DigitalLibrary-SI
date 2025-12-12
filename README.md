@@ -1,64 +1,157 @@
-# Project-Catalog-Digital-Library-Information-System
-## Deskripsi Singkat Sistem
-Aplikasi Manajemen Katalog Buku Digital adalah sistem berbasis web yang digunakan untuk mengelola koleksi buku secara lebih terstruktur.
-Sistem ini memungkinkan admin untuk menambah, mengedit, dan menghapus data buku, sementara pengguna dapat mencari
-buku berdasarkan judul atau kategori serta melihat detail informasi buku. Sistem dirancang untuk memenuhi minimal 3–5 fitur
-fungsional utama sesuai kebutuhan implementasi.
+Siap — berikut **README.md revisi** tanpa mencantumkan credential default.
+(Username & password tetap ada di kode Java, tapi **tidak ditulis di README**.)
 
-## Teknologi yang Digunakan
-- HTML5, CSS3, JavaScript  
-- PHP Native  
-- MySQL (XAMPP)  
-- Git & GitHub  
+---
 
-## Cara Menjalankan Aplikasi
-1. Install XAMPP.  
-2. Pindahkan folder proyek ke:
+# 📚 Digital Library Catalog – Java CLI Application
+
+Aplikasi **Katalog Buku Digital** ini dikembangkan menggunakan **Java (Console-Based / CLI)** untuk mendukung proses pencarian dan pengelolaan koleksi buku pada Program Studi Sistem Informasi. Sistem menyediakan fitur untuk tiga jenis peran: **Admin**, **User (Student/Lecturer)**, dan **Kaprodi**, dengan antarmuka berbasis teks yang sederhana dan mudah digunakan.
+
+Aplikasi dirancang menggunakan pendekatan **Object-Oriented Programming (OOP)** serta arsitektur **3-layer** sederhana:
+**Presentation Layer** → **Service Layer** → **Model Layer**.
+
+---
+
+## 📖 1. Deskripsi Singkat Sistem
+
+Aplikasi ini menyediakan layanan katalog buku digital dengan fitur yang berbeda untuk tiap role:
+
+### **Admin**
+
+* Login menggunakan credential privat yang tersimpan di kode Java
+* Kelola data buku (Tambah, Edit, Hapus)
+* Melihat daftar seluruh buku
+
+### **User — Student / Lecturer**
+
+* Tidak perlu login
+* Melihat daftar buku
+* Mencari buku berdasarkan judul / penulis / kategori
+* Melihat detail buku
+* Filter buku berdasarkan kategori
+
+### **Kaprodi**
+
+* Login menggunakan credential privat internal
+* Melihat seluruh katalog
+* Melakukan pencarian
+* Mengakses laporan data
+
+---
+
+## 🛠️ 2. Teknologi yang Digunakan
+
+| Teknologi                | Fungsi                                                  |
+| ------------------------ | ------------------------------------------------------- |
+| **Java 17+**             | Bahasa utama aplikasi                                   |
+| **OOP Principles**       | Class, object, encapsulation, inheritance, polimorfisme |
+| **ArrayList**            | Penyimpanan data in-memory                              |
+| **Scanner**              | Input dari CLI                                          |
+| **Exception Handling**   | Validasi input dan penanganan error                     |
+| **3-Layer Architecture** | Pemisahan tanggung jawab kode                           |
+
+---
+
+## 📂 3. Struktur Folder Project
 
 ```
-C:\xampp\htdocs\
+src/
+ ├── app/
+ │   ├── MainApp.java
+ │   ├── AdminApp.java
+ │   ├── UserApp.java
+ │   └── KaprodiApp.java
+ ├── model/
+ │   ├── Book.java
+ │   ├── Author.java
+ │   ├── Category.java
+ │   └── Admin.java
+ ├── service/
+ │   ├── AuthService.java
+ │   ├── AdminService.java
+ │   ├── BookService.java
+ │   └── ReportService.java
+ └── util/
+     └── InputUtil.java
 ```
-3. Jalankan Apache dan MySQL.  
-4. Buat database dengan nama:
+
+---
+
+## ▶️ 4. Cara Menjalankan Aplikasi
+
+### **1. Compile**
+
+Masuk ke direktori `src/`:
 
 ```
-katalog_buku
+javac app/MainApp.java
 ```
-5. Import file `database.sql` melalui phpMyAdmin.  
-6. Sesuaikan koneksi database pada:
+
+Java akan otomatis meng-compile seluruh class di package lain.
+
+---
+
+### **2. Jalankan Aplikasi**
 
 ```
-config/database.php
+java app.MainApp
 ```
-7. Jalankan aplikasi melalui browser:
 
-```
-[http://localhost/katalog-buku/](http://localhost/katalog-buku/)
-````
+---
 
-## Bagian yang Dibantu oleh Generative AI
-Penggunaan AI pada proyek ini mengikuti batasan tugas, yaitu hanya sebagai alat bantu, bukan pengganti pengerjaan kode.
-Bantuan AI digunakan untuk:
-### 1. Membantu Menulis Fungsi Tertentu  
-Contoh kode yang diberikan AI:  
-```php
-$query = "SELECT * FROM buku WHERE judul LIKE '%$keyword%'";
-````
-Kode tersebut kemudian disesuaikan kembali agar aman dan sesuai kebutuhan proyek.
-### 2. Memberi Contoh Struktur Proyek
-AI memberikan saran struktur folder sederhana:
-```
-/config
-/database
-/public
-/views
-```
-Namun penyesuaian struktur akhir ditentukan sendiri sesuai kebutuhan implementasi.
-### 3. Refactoring dan Komentar Kode
-AI membantu menjelaskan perbaikan seperti:
-* Menambahkan validasi input sebelum query
-* Memberi komentar pada fungsi CRUD agar mudah dipahami
-* Menyarankan pemisahan file konfigurasi database
-### Penegasan
-Seluruh implementasi final, logika fitur, perbaikan keamanan dasar, dan penyesuaian kode dilakukan secara mandiri oleh mahasiswa.
-Tidak ada bagian sistem yang dilakukan sebagai copy-paste penuh dari AI tanpa pemahaman.
+### **3. Login Admin & Kaprodi**
+
+Credential login **disimpan secara private di dalam kode Java**,
+dan **tidak ditampilkan di README** sesuai standar keamanan dokumentasi.
+
+---
+
+## 🤖 5. Bagian yang Dibantu oleh Generative AI
+
+Generative AI digunakan hanya sebagai alat bantu dalam:
+
+### **A. Penyusunan Struktur Kode**
+
+AI memberikan rekomendasi struktur package seperti `app/`, `service/`, `model/`, dan `util/`.
+
+### **B. Contoh Implementasi Awal**
+
+AI memberi contoh snippet untuk:
+
+* class model dasar seperti `Book`
+* kerangka CRUD `BookService`
+* format tampilan CLI
+
+Mahasiswa kemudian menyesuaikan dan mengembangkan lebih lanjut.
+
+### **C. Penyelesaian Error**
+
+AI membantu memperbaiki:
+
+* error Scanner newline
+* NullPointerException saat list kosong
+* infinite loop pada switch-case
+* perbaikan formatting output CLI
+
+### **D. Penjelasan Teknis**
+
+Menjadi referensi saat memutuskan pemisahan class dan responsibility pada tiap layer.
+
+📌 *Meskipun terbantu AI, keseluruhan desain, penyesuaian fungsi, integrasi role, dan flow aplikasi diselesaikan secara manual oleh mahasiswa.*
+
+---
+
+## 📜 6. Lisensi
+
+Proyek ini dibuat untuk keperluan akademik dan pembelajaran.
+Penggunaan ulang dan modifikasi diperbolehkan selama tetap mencantumkan atribusi kepada pengembang asli.
+
+---
+
+Jika kamu ingin:
+✨ Dibuatkan versi PDF README
+✨ Dibuatkan README versi Bahasa Inggris
+✨ Ditambah screenshot CLI tampilan contoh
+✨ Ditambah diagram arsitektur untuk README
+
+Tinggal bilang aja!
