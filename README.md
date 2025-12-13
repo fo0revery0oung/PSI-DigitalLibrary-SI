@@ -1,143 +1,155 @@
-# 📚 Digital Library Catalog – Java CLI Application
-Aplikasi **Katalog Buku Digital** ini dikembangkan menggunakan **Java (Console-Based / CLI)** untuk mendukung proses pencarian dan pengelolaan koleksi buku pada Program Studi Sistem Informasi. Sistem menyediakan fitur untuk tiga jenis peran: **Admin**, **User (Student/Lecturer)**, dan **Kaprodi**, dengan antarmuka berbasis teks yang sederhana dan mudah digunakan.
+# 📚 Katalog Buku Digital
 
-Aplikasi dirancang menggunakan pendekatan **Object-Oriented Programming (OOP)** serta arsitektur **3-layer** sederhana:
-**Presentation Layer** → **Service Layer** → **Model Layer**.
+Aplikasi **Katalog Buku Digital** adalah aplikasi berbasis web sederhana yang dibuat untuk membantu pengelolaan dan pencarian data buku pada lingkungan **Program Studi Sistem Informasi**. Aplikasi ini dirancang dengan antarmuka modern, bersih, dan mudah digunakan oleh berbagai peran pengguna.
 
 ---
 
-## 📖 1. Deskripsi Singkat Sistem
+## 📝 Deskripsi Aplikasi
 
-Aplikasi ini menyediakan layanan katalog buku digital dengan fitur yang berbeda untuk tiap role:
+Aplikasi **Katalog Buku Digital** merupakan aplikasi berbasis web yang dirancang untuk mengelola dan menampilkan data buku secara digital pada lingkungan **Program Studi Sistem Informasi**. Aplikasi ini mempermudah admin dalam melakukan manajemen buku serta memberikan kemudahan akses informasi buku bagi mahasiswa, dosen, dan kaprodi.
 
-### **Admin**
+Aplikasi ini dikembangkan sebagai media pembelajaran implementasi konsep **frontend web development** menggunakan HTML, CSS, dan JavaScript tanpa backend, sehingga mudah dipahami, dijalankan, dan dikembangkan kembali.
 
-* Login menggunakan credential privat yang tersimpan di kode Java
-* Kelola data buku (Tambah, Edit, Hapus)
-* Melihat daftar seluruh buku
+---
 
-### **User — Student / Lecturer**
+## 🎯 Tujuan Aplikasi
 
-* Tidak perlu login
+Aplikasi ini hadir untuk:
+
+* Mempermudah **pengelolaan data buku digital**
+* Menyediakan **akses informasi buku** bagi mahasiswa dan dosen
+* Membantu **kaprodi** dalam memantau koleksi buku
+* Menjadi media pembelajaran implementasi **HTML, CSS, dan JavaScript**
+
+---
+
+## 👥 Role Pengguna
+
+### 🔐 Admin
+
+* Login ke dashboard admin
+* Menambahkan data buku baru
+* Mengedit dan menghapus data buku
+* Melihat statistik jumlah buku
+* Mengelola seluruh data katalog
+
+### 👨‍🎓 Mahasiswa / 👩‍🏫 Dosen
+
 * Melihat daftar buku
-* Mencari buku berdasarkan judul / penulis / kategori
-* Melihat detail buku
-* Filter buku berdasarkan kategori
+* Mengakses informasi detail buku
+* Menggunakan katalog sebagai referensi pembelajaran
 
-### **Kaprodi**
+### 👨‍💼 Kaprodi
 
-* Login menggunakan credential privat internal
-* Melihat seluruh katalog
-* Melakukan pencarian
-* Mengakses laporan data
+* Melihat laporan buku
+* Memantau data katalog
+* Mendukung pengambilan keputusan akademik
 
 ---
 
-## 🛠️ 2. Teknologi yang Digunakan
+## ✨ Fitur Utama
 
-| Teknologi                | Fungsi                                                  |
-| ------------------------ | ------------------------------------------------------- |
-| **Java 17+**             | Bahasa utama aplikasi                                   |
-| **OOP Principles**       | Class, object, encapsulation, inheritance, polimorfisme |
-| **ArrayList**            | Penyimpanan data in-memory                              |
-| **Scanner**              | Input dari CLI                                          |
-| **Exception Handling**   | Validasi input dan penanganan error                     |
-| **3-Layer Architecture** | Pemisahan tanggung jawab kode                           |
+* 🔑 Sistem login admin
+* 📊 Dashboard admin interaktif
+* 📚 Manajemen buku (CRUD)
+* 🧾 Tabel data buku
+* 🆕 Daftar buku terbaru
+* 🎨 Tampilan modern dengan dominasi warna oranye & putih
+* 📱 Desain responsif
 
 ---
 
-## 📂 3. Struktur Folder Project
+## 🗂️ Struktur Folder
 
 ```
-src/
- ├── app/
- │   ├── MainApp.java
- │   ├── AdminApp.java
- │   ├── UserApp.java
- │   └── KaprodiApp.java
- ├── model/
- │   ├── Book.java
- │   ├── Author.java
- │   ├── Category.java
- │   └── Admin.java
- ├── service/
- │   ├── AuthService.java
- │   ├── AdminService.java
- │   ├── BookService.java
- │   └── ReportService.java
- └── util/
-     └── InputUtil.java
+Digital-Library/
+│
+├── main.html          # Halaman utama aplikasi
+├── admin.html         # Dashboard admin
+├── user.html          # Halaman user (mahasiswa/dosen)
+├── kaprodi.html       # Halaman kaprodi
+│
+└── assets/
+    └── img/
+        └── character.png   # Gambar ilustrasi
 ```
 
 ---
 
-## ▶️ 4. Cara Menjalankan Aplikasi
+## 🛠️ Teknologi yang Digunakan
 
-### **1. Compile**
+Teknologi yang digunakan dalam pengembangan aplikasi ini adalah:
 
-Masuk ke direktori `src/`:
+* **HTML5** – Digunakan untuk membangun struktur halaman aplikasi
+* **CSS3** – Digunakan untuk mengatur tampilan, layout, warna, dan animasi
+* **JavaScript (Vanilla JS)** – Digunakan untuk mengelola logika aplikasi seperti login, CRUD data buku, dan interaksi pengguna
 
-```
-javac app/MainApp.java
-```
-
-Java akan otomatis meng-compile seluruh class di package lain.
+Aplikasi ini tidak menggunakan framework atau library eksternal sehingga dapat dijalankan di berbagai environment tanpa konfigurasi tambahan.
 
 ---
 
-### **2. Jalankan Aplikasi**
+## 🚀 Cara Menjalankan Aplikasi
 
-```
-java app.MainApp
-```
+Untuk menjalankan aplikasi Katalog Buku Digital, ikuti langkah berikut:
 
----
+1. Download atau clone repository project
+2. **Ekstrak seluruh isi file ZIP ke dalam satu folder yang sama**
 
-### **3. Login Admin & Kaprodi**
+   > ⚠️ Seluruh file HTML dan folder `assets` **harus berada dalam satu folder utama**, tidak boleh terpisah, agar aplikasi dapat berjalan dengan baik
+3. Buka folder hasil ekstraksi / clone repository
+4. Pastikan struktur folder sudah benar (semua file berada dalam satu folder)
+5. Jalankan aplikasi dengan membuka file `main.html` menggunakan browser
 
-Credential login **disimpan secara private di dalam kode Java**,
-dan **tidak ditampilkan di README** sesuai standar keamanan dokumentasi.
+   * Google Chrome (disarankan)
+   * Mozilla Firefox
+   * Microsoft Edge
 
----
+### Login Admin
 
-## 🤖 5. Bagian yang Dibantu oleh Generative AI
-
-Generative AI digunakan hanya sebagai alat bantu dalam:
-
-### **A. Penyusunan Struktur Kode**
-
-AI memberikan rekomendasi struktur package seperti `app/`, `service/`, `model/`, dan `util/`.
-
-### **B. Contoh Implementasi Awal**
-
-AI memberi contoh snippet untuk:
-
-* class model dasar seperti `Book`
-* kerangka CRUD `BookService`
-* format tampilan CLI
-
-Mahasiswa kemudian menyesuaikan dan mengembangkan lebih lanjut.
-
-### **C. Penyelesaian Error**
-
-AI membantu memperbaiki:
-
-* error Scanner newline
-* NullPointerException saat list kosong
-* infinite loop pada switch-case
-* perbaikan formatting output CLI
-
-### **D. Penjelasan Teknis**
-
-Menjadi referensi saat memutuskan pemisahan class dan responsibility pada tiap layer.
-
-📌 *Meskipun terbantu AI, keseluruhan desain, penyesuaian fungsi, integrasi role, dan flow aplikasi diselesaikan secara manual oleh mahasiswa.*
+* **Username:** admin
+* **Password:** admin123
 
 ---
 
-## 📜 6. Lisensi
+## 🔍 Uji Coba Aplikasi (Clone Repository)
 
-Proyek ini dibuat untuk keperluan akademik dan pembelajaran.
-Penggunaan ulang dan modifikasi diperbolehkan selama tetap mencantumkan atribusi kepada pengembang asli.
+Untuk memastikan aplikasi dapat dijalankan di environment lain, telah dilakukan uji coba ulang dengan langkah berikut:
+
+1. Melakukan clone repository pada perangkat yang berbeda
+2. **Mengekstrak dan memastikan seluruh file berada dalam satu folder utama yang sama**
+3. Membuka folder project hasil clone tanpa melakukan konfigurasi tambahan
+4. Menjalankan file `main.html` langsung melalui browser
+5. Menguji seluruh fitur utama:
+
+   * Login admin
+   * Dashboard admin
+   * Tambah, edit, dan hapus data buku
+   * Tampilan tabel dan statistik
+
+Hasil uji coba menunjukkan bahwa aplikasi dapat berjalan dengan baik pada environment yang berbeda selama seluruh file berada dalam satu folder yang sama.
 
 ---
+
+## 📌 Catatan
+
+Aplikasi ini dibuat untuk:
+
+* Tugas mata kuliah
+* Project UTS / UAS
+* Media pembelajaran
+
+Masih bersifat **frontend-only** (tanpa database dan backend).
+
+---
+
+## 👨‍💻 Pengembang
+
+Dikembangkan oleh:
+
+* **Mahasiswa Program Studi Sistem Informasi**
+
+© 2025 – Project PSI
+
+---
+
+✨ *Feel free to use, modify, and develop this project for learning purposes.*
