@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Katalog Buku Digital</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#fff7ed;
+      line-height:1.6;
+    }
+
+    header{
+      background:#f97316;
+      color:#fff;
+      padding:30px 20px;
+      text-align:center;
+    }
+
+    header p{
+      margin-top:8px;
+      font-size:16px;
+      opacity:0.95;
+    }
+
+    .description{
+      max-width:900px;
+      margin:40px auto 10px;
+      padding:0 20px;
+      text-align:center;
+    }
+
+    .description h2{
+      color:#ea580c;
+      margin-bottom:15px;
+    }
+
+    .description p{
+      color:#7c2d12;
+      font-size:15px;
+    }
+
+    .container{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+      padding:40px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .card{
+      background:#fff;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+      text-align:center;
+    }
+
+
+    .card h2{
+      color:#ea580c;
+      margin-bottom:15px;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#7c2d12;
+      margin-bottom:20px;
+    }
+.description-wrapper{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  max-width:1000px;
+  margin:50px auto 10px;
+  padding:0 20px;
+}
+
+.desc-image{
+  flex:1;
+  text-align:center;
+}
+
+.desc-image img{
+  width:250px;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.description{
+  flex:2;
+  text-align:left;
+}
+
+.description h2{
+  color:#ea580c;
+  margin-bottom:15px;
+}
+
+.description p{
+  color:#7c2d12;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+/* Animasi naik turun pelan */
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-20px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+
+    button{
+      background:#fb923c;
+      color:#fff;
+      border:none;
+      padding:12px 24px;
+      border-radius:6px;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    button:hover{
+      background:#ea580c;
+    }
+
+    footer{
+      text-align:center;
+      padding:15px;
+      background:#ffedd5;
+      color:#7c2d12;
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Aplikasi Katalog Buku Digital</h1>
+  <p>Perpustakaan Program Studi Sistem Informasi</p>
+</header>
+
+<section class="description-wrapper">
+
+  <div class="desc-image">
+    <img src="character.png" alt="Ilustrasi Buku">
+  </div>
+
+  <div class="description">
+    <h2>Tentang Aplikasi</h2>
+    <p>
+      Aplikasi Katalog Buku Digital dikembangkan untuk membantu pengelolaan dan 
+      pencarian koleksi buku di Perpustakaan Program Studi Sistem Informasi.
+      Melalui aplikasi ini, pengguna dapat menemukan informasi buku dengan mudah
+      berdasarkan judul, penulis, tahun terbit, maupun kategori.
+    </p>
+    <p>
+      Aplikasi ini menyediakan tampilan berbeda untuk Admin, Mahasiswa/Dosen,
+      dan Kaprodi sesuai dengan peran dan kebutuhan masing-masing.
+    </p>
+  </div>
+
+</section>
+
+<section class="container">
+
+  <div class="card">
+    <h2>Admin</h2>
+    <p>Mengelola data buku, menambah, mengubah, dan menghapus koleksi katalog.</p>
+    <button onclick="location.href='admin.html'">Login Admin</button>
+  </div>
+
+  <div class="card">
+    <h2>Mahasiswa / Dosen</h2>
+    <p>Mencari buku, melihat detail koleksi, dan mendapatkan referensi belajar.</p>
+    <button onclick="location.href='user.html'">Masuk User</button>
+  </div>
+
+  <div class="card">
+    <h2>Kaprodi</h2>
+    <p>Memantau koleksi buku dan memastikan kesesuaian dengan kebutuhan prodi.</p>
+    <button onclick="location.href='kaprodi.html'">Login Kaprodi</button>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 – Project Pengantar Sistem Informasi
+</footer>
+
+</body>
+</html>
